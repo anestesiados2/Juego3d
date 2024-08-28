@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://xwi63qbi580a"]
+
+[ext_resource type="ArrayMesh" uid="uid://ujwg7r34x7rd" path="res://Masha Wild-oats Fist/hero_xiongnv_skin_high_add.obj" id="1_mshsr"]
+[ext_resource type="Script" path="res://player/node.gd" id="2_6tdip"]
+[ext_resource type="PackedScene" uid="uid://betoo13j070oy" path="res://GodotActionRPG-Assets/Models/Sword.dae" id="2_8wm4t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqihh"]
+size = Vector3(0.953613, 2.07738, 0.615967)
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_mshsr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0231934, 1.05454, -0.0235596)
+shape = SubResource("BoxShape3D_dqihh")
+
+[node name="Node" type="Node3D" parent="."]
+script = ExtResource("2_6tdip")
+
+[node name="Camera3D" type="Camera3D" parent="Node"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, -3)
+
+[node name="weapon older" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25655, 0.324414)
+
+[node name="Sword" parent="weapon older" instance=ExtResource("2_8wm4t")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00091213, 1.18161, 0.539003)
+target_position = Vector3(0, 0, 1.5)

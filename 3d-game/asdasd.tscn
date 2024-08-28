@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgj2xlkvvq7d1"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7bq46edf13l5" path="res://GodotActionRPG-Assets/Models/Environment/naturePack_001.obj" id="1_lviw3"]
+[ext_resource type="ArrayMesh" uid="uid://bhub4ugbwelph" path="res://GodotActionRPG-Assets/Models/Environment/naturePack_017.obj" id="2_6v7wy"]
+[ext_resource type="PackedScene" uid="uid://xwi63qbi580a" path="res://player/player.tscn" id="3_t708k"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lb7y4"]
+points = PackedVector3Array(2.9367, 0.3, -0.0635383, -0.0238094, -0.0238096, -3.02321, -0.0238094, -0.0238096, 0.0235112, 3.02378, -0.0238096, -3.02321, 0.0632647, 0.3, -2.93616, 3.02378, -0.0238096, 0.0235112, 0.0632647, 0.3, -0.0635383, 2.9367, 0.3, -2.93616)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fthdk"]
+points = PackedVector3Array(0.875679, 0.023785, -0.00683446, 0.287586, 0.00704224, -1.00501, 0.0923467, 0.00727694, -0.66675, 0.393172, 0.631685, -0.828875, 0.8924, 0.00701881, -1.00505, 0.784855, 0.628602, -0.187935, 0.300822, 0.00201092, -0.000577827, 0.220416, 0.626496, -0.489354, 0.963259, 0.629498, -0.524555, 1.16618, 0.00329472, -0.488955, 0.78501, 0.611103, -0.843852, 0.395123, 0.628579, -0.187959, 0.0138273, 0.00331866, -0.488956, 0.305743, 0.0607334, -1.00445, 1.15969, 0.00684636, -0.542247, 0.216758, 0.629546, -0.524558, 0.895913, 0.00340111, -0.0208592, 0.874332, 0.0607334, -1.00445, 0.395285, 0.592889, -0.170363, 0.98059, 0.593589, -0.506821, 0.394885, 0.557949, -0.861577, 0.786806, 0.631708, -0.828899, 0.029002, 0.0642316, -0.524311, 0.784678, 0.592889, -0.170363, 0.284074, 0.00342505, -0.0208961, 0.879254, 0.00201092, -0.000577827, 0.785079, 0.557949, -0.861577, 1.15721, 0.0614005, -0.506821, 0.199424, 0.593631, -0.506821, 0.394968, 0.611081, -0.843827, 0.0203206, 0.00686978, -0.542244, 0.0227968, 0.06142, -0.506821)
+
+[sub_resource type="Sky" id="Sky_icrn4"]
+
+[sub_resource type="Environment" id="Environment_l006m"]
+background_mode = 1
+background_color = Color(0.298828, 0.535243, 0.686322, 1)
+sky = SubResource("Sky_icrn4")
+
+[node name="Mundo1" type="Node3D"]
+
+[node name="NaturePack001" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_lviw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack001"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack001/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_lb7y4")
+
+[node name="NaturePack017" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190404, 0.0224182, -1.72896)
+mesh = ExtResource("2_6v7wy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NaturePack017"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NaturePack017/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fthdk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l006m")
+
+[node name="Player" parent="WorldEnvironment" instance=ExtResource("3_t708k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.33524, 0.635899, -1.42802)

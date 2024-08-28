@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhc1328m602ur"
+path="res://.godot/imported/hero_xiongnv_skin_high_add.obj-eb132dd93fcb2ef68a27a73b1f2cb3de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hero_xiongnv_skin_high_add.obj-eb132dd93fcb2ef68a27a73b1f2cb3de.mesh"]
+
+source_file="res://Masha Wild-oats Fist/Angry Mode/hero_xiongnv_skin_high_add.obj"
+dest_files=["res://.godot/imported/hero_xiongnv_skin_high_add.obj-eb132dd93fcb2ef68a27a73b1f2cb3de.mesh", "res://.godot/imported/hero_xiongnv_skin_high_add.obj-eb132dd93fcb2ef68a27a73b1f2cb3de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
